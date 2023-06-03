@@ -1,8 +1,12 @@
 public class Main {
 
     public static void main(String[] args) {
-        Dog dog = new Dog();
-        dog.makeSound();
+        Object[] list = {new Dog(), new DogFood()};
+        for (Object object: list) {
+            if (object instanceof Animal) {
+                ((Animal) object).makeSound();
+            }
+        }
     }
 }
 
@@ -18,6 +22,10 @@ class Dog extends Animal {
     Dog() {
         sound = "bark";
     }
+}
+
+class DogFood {
+
 }
 
 
